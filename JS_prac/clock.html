@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>시계를 만들어보자</h1>
+    <h2 id="clock">00:00</h2>
+
+    <script>
+      const clock = document.getElementById("clock");
+
+      function addClock() {
+        const today = new Date();
+        const hour = today.getHours();
+        const minute = today.getMinutes();
+        const seconds = today.getSeconds();
+
+        let nowTime = `${hour} : ${minute} : ${seconds}`;
+        clock.innerHTML = nowTime;
+      }
+
+      function init() {
+        addClock();
+        setInterval(addClock, 1000);
+      }
+      init();
+    </script>
+  </body>
+</html>
